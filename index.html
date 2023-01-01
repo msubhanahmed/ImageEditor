@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    
+</head>
+  <body>
+    <div class="container ">
+        <h2> Photo Editor</h2>
+        <div class="wrapper">
+            <div class="editor-panel">
+                <div class="filter">
+                    <label class="title">Filters</label>
+                    <div class="options">
+                        <button id="brightness" onclick="pictureproperty('Brightness')">Brightness</button>
+                        <button id="saturation" onclick="pictureproperty('Saturation')">Saturation</button>
+                        <button id="inversion" onclick="pictureproperty('Inversion')">Inversion</button>
+                        <button id="grayscale" onclick="pictureproperty('Grayscale')">Grayscale</button>
+                    </div>
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p id="sliderpropertyname" class="name">Brighteness</p>
+                            <p id="slidervaluedisp" class="value">100</p>
+                        </div>
+                        <input id="slidervalue" type="range" value="0" min="0" max="100" onchange="slidervaluechange()">
+                    </div>
+                </div>
+                <div class="rotate">
+                    <label class="title">Rotate & Flip</label>
+                    <div class="options">
+                        <button id="left" onclick="rotate('-90')"><i class="fa-solid fa-rotate-left"></i></button>
+                        <button id="right" onclick="rotate('90')"><i class="fa-solid fa-rotate-right"></i></button>
+                        <button id="horizontal" onclick="fliphorizontal()"><i class='bx bx-reflect-vertical'></i></button>
+                        <button id="vertical" onclick="flipvertical()"><i class='bx bx-reflect-horizontal' ></i></button>
+                    </div>
+                </div>
+                <div id="slidercontrols" class="filter">
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p id="blur" class="name">Blur</p>
+                            <p id="blurvaluedisp" class="value">0</p>
+                        </div>
+                        <input id="blurvalue" type="range" value="0" min="0" max="100" onchange="blurfilter()">
+                    </div>
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p id="sepia" class="name">Sepia</p>
+                            <p id="sepiavaluedisp" class="value">0</p>
+                        </div>
+                        <input id="sepiavalue" type="range" value="0" min="0" max="100" onchange="sepiafilter()">
+                    </div>
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p id="rotate" class="name">Rotate</p>
+                            <p id="rotatevaluedisp" class="value">0</p>
+                        </div>
+                        <input id="rotatevalue" type="range" value="0" min="-360" max="360" onchange="rotatebydegree()">
+                    </div>
+                </div>
+            </div>
+            <div class="preview-img">
+                <img id="userimage" src="image-placeholder.svg" >
+                <canvas id="usercanvas"></canvas>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="reset-filter" onclick="reset()">Reset Filters</button>
+            <div class="row">
+                <input type="file" class="file-input" accept="image/*" id="fileinput" hidden>
+                <button class="choose-img" onclick="loadfiles()">Choose Image</button>
+                <button id="imagesave" class="save-img" onclick="saveimage()">Save Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>
