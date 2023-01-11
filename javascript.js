@@ -244,7 +244,7 @@ function reset()
     {
         var canvas = document.getElementById("usercanvas");
         const context = canvas.getContext("2d");
-        context.reset();
+        //context.reset();
         var filedesc = document.querySelector('#fileinput').files[0];
         var freader = new FileReader();
         freader.addEventListener("load", () => { userimage.src = freader.result;}, false);
