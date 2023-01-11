@@ -263,8 +263,6 @@ function reset()
         document.querySelector("#slidervaluedisp").innerHTML = "0";
         
         imageangle = 0;
-        document.querySelector("#rotatevalue").value = imageangle;
-        document.querySelector("#rotatevaluedisp").innerHTML = imageangle;
 
         document.querySelector("#blurvalue").value = blurvalue;
         document.querySelector("#blurvaluedisp").innerHTML = blurvalue;
